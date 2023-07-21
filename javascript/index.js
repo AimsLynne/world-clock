@@ -1,23 +1,23 @@
 function updateTime() {
-  //los angeles
-  let losAngelesElement = document.querySelector("#los-angeles");
-  let losAngelesDateElement = losAngelesElement.querySelector(".date");
-  let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-  let losAngelesTime = moment().tz("America/Los_Angeles");
+  //london
+  let londonElement = document.querySelector("#london");
+  let londonDateElement = londonElement.querySelector(".date");
+  let londonTimeElement = londonElement.querySelector(".time");
+  let londonTime = moment().tz("Europe/London");
 
-  losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
-  losAngelesTimeElement.innerHTML = losAngelesTime.format(
+  londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
+  londonTimeElement.innerHTML = londonTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
 
-  //sydney
-  let sydneyElement = document.querySelector("#sydney");
-  let sydneyDateElement = sydneyElement.querySelector(".date");
-  let sydneyTimeElement = sydneyElement.querySelector(".time");
-  let sydneyTime = moment().tz("Australia/Sydney");
+  //Johannesburg
+  let johannesburgElement = document.querySelector("#johannesburg");
+  let johannesburgDateElement = johannesburgElement.querySelector(".date");
+  let johannesburgTimeElement = johannesburgElement.querySelector(".time");
+  let johannesburgTime = moment().tz("Africa/Johannesburg");
 
-  sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
-  sydneyTimeElement.innerHTML = sydneyTime.format(
+  johannesburgDateElement.innerHTML = johannesburgTime.format("MMMM Do YYYY");
+  johannesburgTimeElement.innerHTML = johannesburgTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
 }
