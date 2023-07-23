@@ -22,6 +22,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let hongKongElement = document.querySelector("#hong-kong");
+  let hongKongDateElement = hongKongElement.querySelector(".date");
+  if (hongKongElement) {
+    let hongKongTimeElement = hongKongElement.querySelector(".time");
+    let hongKongTime = moment().tz("Asia/Hong_Kong");
+
+    hongKongDateElement.innerHTML = hongKongTime.format("MMMM Do YYYY");
+    hongKongTimeElement.innerHTML = hongKongTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -29,7 +40,7 @@ function updateCity(event) {
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
-  let cityName = cityTimeZone.split("/")[1];
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `
@@ -42,6 +53,7 @@ function updateCity(event) {
             "h:mm:ss"
           )} <small>${cityTime.format("A")}</small></div>
         </div>
+        <a href="/">All cities</a>
   `;
 }
 
