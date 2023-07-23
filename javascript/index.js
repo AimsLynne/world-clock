@@ -1,5 +1,4 @@
 function updateTime() {
-  //london
   let londonElement = document.querySelector("#london");
   let londonDateElement = londonElement.querySelector(".date");
   if (londonElement) {
@@ -12,7 +11,6 @@ function updateTime() {
     );
   }
 
-  //Johannesburg
   let johannesburgElement = document.querySelector("#johannesburg");
   let johannesburgDateElement = johannesburgElement.querySelector(".date");
   if (johannesburgElement) {
@@ -28,6 +26,9 @@ function updateTime() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
